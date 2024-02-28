@@ -1,0 +1,165 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>分组循环 | zwf的博客</title><meta name="author" content="zwf"><meta name="copyright" content="zwf"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="2760. 最长奇偶子数组https:&#x2F;&#x2F;leetcode.cn&#x2F;problems&#x2F;longest-even-odd-subarray-with-threshold&#x2F;solutions&#x2F;2528771&#x2F;jiao-ni-yi-ci-xing-ba-dai-ma-xie-dui-on-zuspx&#x2F; 题目给你一个下标从 0 开始的整数数组 nums 和一个整数 threshold 。 请你从 nums">
+<meta property="og:type" content="article">
+<meta property="og:title" content="分组循环">
+<meta property="og:url" content="http://example.com/2023/11/16/%E5%88%86%E7%BB%84%E5%BE%AA%E7%8E%AF/index.html">
+<meta property="og:site_name" content="zwf的博客">
+<meta property="og:description" content="2760. 最长奇偶子数组https:&#x2F;&#x2F;leetcode.cn&#x2F;problems&#x2F;longest-even-odd-subarray-with-threshold&#x2F;solutions&#x2F;2528771&#x2F;jiao-ni-yi-ci-xing-ba-dai-ma-xie-dui-on-zuspx&#x2F; 题目给你一个下标从 0 开始的整数数组 nums 和一个整数 threshold 。 请你从 nums">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com//img/favicon.png">
+<meta property="article:published_time" content="2023-11-16T13:47:43.000Z">
+<meta property="article:modified_time" content="2023-11-24T13:30:47.109Z">
+<meta property="article:author" content="zwf">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com//img/favicon.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/11/16/%E5%88%86%E7%BB%84%E5%BE%AA%E7%8E%AF/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '分组循环',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-11-24 21:30:47'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/%5Cimg%5Cfavicon.png" onerror="onerror=null;src='/img/favicon.png'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="zwf的博客"><span class="site-name">zwf的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">分组循环</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-11-16T13:47:43.000Z" title="发表于 2023-11-16 21:47:43">2023-11-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-11-24T13:30:47.109Z" title="更新于 2023-11-24 21:30:47">2023-11-24</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="分组循环"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="2760-最长奇偶子数组"><a href="#2760-最长奇偶子数组" class="headerlink" title="2760. 最长奇偶子数组"></a>2760. 最长奇偶子数组</h1><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-even-odd-subarray-with-threshold/solutions/2528771/jiao-ni-yi-ci-xing-ba-dai-ma-xie-dui-on-zuspx/">https://leetcode.cn/problems/longest-even-odd-subarray-with-threshold/solutions/2528771/jiao-ni-yi-ci-xing-ba-dai-ma-xie-dui-on-zuspx/</a></p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给你一个下标从 0 开始的整数数组 nums 和一个整数 threshold 。</p>
+<p>请你从 nums 的子数组中找出以下标 l 开头、下标 r 结尾 (0 &lt;&#x3D; l &lt;&#x3D; r &lt; nums.length) 且满足以下条件的 最长子数组 ：</p>
+<p>nums[l] % 2 &#x3D;&#x3D; 0<br>对于范围 [l, r - 1] 内的所有下标 i ，nums[i] % 2 !&#x3D; nums[i + 1] % 2<br>对于范围 [l, r] 内的所有下标 i ，nums[i] &lt;&#x3D; threshold<br>以整数形式返回满足题目要求的最长子数组的长度。</p>
+<p>注意：子数组 是数组中的一个连续非空元素序列。</p>
+<p>示例 1：</p>
+<p>输入：nums &#x3D; [3,2,5,4], threshold &#x3D; 5<br>输出：3<br>解释：在这个示例中，我们选择从 l &#x3D; 1 开始、到 r &#x3D; 3 结束的子数组 &#x3D;&gt; [2,5,4] ，满足上述条件。<br>因此，答案就是这个子数组的长度 3 。可以证明 3 是满足题目要求的最大长度。</p>
+<p>提示：<br>1 &lt;&#x3D; nums.length &lt;&#x3D; 100<br>1 &lt;&#x3D; nums[i] &lt;&#x3D; 100<br>1 &lt;&#x3D; threshold &lt;&#x3D; 100</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>该题有多个分组 找到每个分组的左端点（外层循环） 和右端点 （内层循环） 维护最大长度</p>
+<h3 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">n = len(nums)</span><br><span class="line">i = 0</span><br><span class="line">while i &lt; n:</span><br><span class="line">    start = i</span><br><span class="line">    while i &lt; n and ...:</span><br><span class="line">        i += 1</span><br><span class="line">    # 从 start 到 i-1 是一组</span><br><span class="line">    # 下一组从 i 开始，无需 i += 1</span><br></pre></td></tr></table></figure>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def longestAlternatingSubarray(self, nums: List[int], threshold: int) -&gt; int:</span><br><span class="line">        n = len(nums)</span><br><span class="line">        left = 0</span><br><span class="line">        ret = 0</span><br><span class="line">        while left &lt; n:</span><br><span class="line">            if nums[left] % 2 != 0 or nums[left] &gt; threshold:</span><br><span class="line">                left += 1</span><br><span class="line">                continue</span><br><span class="line">            i = left + 1</span><br><span class="line">            while i &lt; n:</span><br><span class="line">                if nums[i] % 2 != nums[i - 1] % 2 and nums[i] &lt;= threshold:</span><br><span class="line">                    i += 1</span><br><span class="line">                else:</span><br><span class="line">                    break</span><br><span class="line">            ret = max(ret, i - left)</span><br><span class="line">            left = i</span><br><span class="line">        return ret</span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">zwf</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/11/16/%E5%88%86%E7%BB%84%E5%BE%AA%E7%8E%AF/">http://example.com/2023/11/16/%E5%88%86%E7%BB%84%E5%BE%AA%E7%8E%AF/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">zwf的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/%5Cimg%5Cfavicon.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/11/16/%E5%8F%8C%E6%8C%87%E9%92%88/" title="同向双指针(滑动窗口)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">同向双指针(滑动窗口)</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/%5Cimg%5Cfavicon.png" onerror="this.onerror=null;this.src='/img/favicon.png'" alt="avatar"/></div><div class="author-info__name">zwf</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/zwfxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2760-%E6%9C%80%E9%95%BF%E5%A5%87%E5%81%B6%E5%AD%90%E6%95%B0%E7%BB%84"><span class="toc-number">1.</span> <span class="toc-text">2760. 最长奇偶子数组</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE"><span class="toc-number">1.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-number">1.2.</span> <span class="toc-text">思路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF"><span class="toc-number">1.2.1.</span> <span class="toc-text">模板</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">1.3.</span> <span class="toc-text">代码</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/16/%E5%88%86%E7%BB%84%E5%BE%AA%E7%8E%AF/" title="分组循环">分组循环</a><time datetime="2023-11-16T13:47:43.000Z" title="发表于 2023-11-16 21:47:43">2023-11-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/16/%E5%8F%8C%E6%8C%87%E9%92%88/" title="同向双指针(滑动窗口)">同向双指针(滑动窗口)</a><time datetime="2023-11-16T12:57:42.000Z" title="发表于 2023-11-16 20:57:42">2023-11-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/12/%E5%AE%B9%E6%96%A5/" title="容斥原理">容斥原理</a><time datetime="2023-11-12T14:46:03.000Z" title="发表于 2023-11-12 22:46:03">2023-11-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/06/st/" title="单调栈">单调栈</a><time datetime="2023-11-06T13:43:50.000Z" title="发表于 2023-11-06 21:43:50">2023-11-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/10/20/First-title/" title="力扣318. 最大单词长度乘积">力扣318. 最大单词长度乘积</a><time datetime="2023-10-20T11:53:15.000Z" title="发表于 2023-10-20 19:53:15">2023-10-20</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By zwf</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
